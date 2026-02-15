@@ -3,29 +3,42 @@ languageCode = 'ru-RU'
 title = 'OpenAgent'
 theme = 'PaperMod'
 
+enableRobotsTXT = true
+paginate = 10
+
 defaultContentLanguage = 'ru'
 defaultContentLanguageInSubdir = true
+
+[sitemap]
+  changefreq = 'weekly'
+  priority = 0.5
+  filename = 'sitemap.xml'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
 
 [languages]
   [languages.ru]
     languageName = 'Русский'
     weight = 1
-    title = 'OpenAgent (RU)'
+    title = 'OpenAgent'
     [languages.ru.params]
-      description = 'Гайды по AI-агентам, OpenClaw и автоматизации.'
-      
+      description = 'Практические гайды по AI-агентам, OpenClaw и автоматизации.'
+
   [languages.uz]
     languageName = "Oz'bek"
     weight = 2
-    title = 'OpenAgent (UZ)'
+    title = 'OpenAgent'
     [languages.uz.params]
-      description = "Sun'iy intellekt agentlari, OpenClaw va avtomatlashtirish bo'yicha qo'llanmalar."
+      description = "AI agentlari, OpenClaw va avtomatlashtirish bo'yicha amaliy qo'llanmalar."
 
 [params]
   env = 'production'
   title = 'OpenAgent'
-  description = 'Блог про AI-агентов'
-  author = 'OpenAgent Team'
+  description = 'Практика AI-агентов: OpenClaw, кейсы, гайды, автоматизация.'
+  author = 'OpenAgent'
+
+  defaultTheme = 'auto'
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -33,12 +46,27 @@ defaultContentLanguageInSubdir = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
   UseHugoToc = true
-  defaultTheme = 'auto'
-  
+  disableSpecial1stPost = false
+
+  # Картинка для превью (OpenGraph/Twitter). Позже заменим на реальную.
+  images = ['img/og.png']
+  keywords = ['OpenClaw', 'AI агенты', 'автоматизация', 'LLM', 'боты', 'Hugo']
+
+  [params.label]
+    text = 'OpenAgent'
+
+  [params.homeInfoParams]
+    Title = 'OpenAgent'
+    Content = 'Реальный опыт использования AI-агентов (OpenClaw): кейсы, гайды, ошибки и решения. RU / UZ.'
+
+  [[params.socialIcons]]
+    name = 'telegram'
+    url = 'https://t.me/'
+
   [params.assets]
-    favicon = '<link / abs url>'
-    favicon16x16 = '<link / abs url>'
-    favicon32x32 = '<link / abs url>'
+    favicon = '/favicon.ico'
+    favicon16x16 = '/favicon-16x16.png'
+    favicon32x32 = '/favicon-32x32.png'
 
 [menu]
   [[languages.ru.menu.main]]
@@ -51,7 +79,7 @@ defaultContentLanguageInSubdir = true
     name = 'Новости AI'
     url = '/ru/posts/news/'
     weight = 20
-    
+
   [[languages.uz.menu.main]]
     identifier = 'guides'
     name = "Qo'llanmalar"

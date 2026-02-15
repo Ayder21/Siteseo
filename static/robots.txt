@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ayder21.github.io/Siteseo/sitemap.xml
