@@ -1,45 +1,56 @@
-baseURL = 'https://ayder21.github.io/Siteseo/'
-languageCode = 'ru-RU'
-title = 'OpenAgent'
-theme = 'PaperMod'
+baseURL = "https://ayder21.github.io/Siteseo/"
+languageCode = "ru-RU"
+title = "OpenAgent"
+theme = "PaperMod"
 
 enableRobotsTXT = true
+
 [pagination]
   pagerSize = 10
 
-defaultContentLanguage = 'ru'
+# NOTE: Hugo v0.146 ругается, если defaultContentLanguage не совпадает с языковыми секциями.
+# По факту он по умолчанию ожидает "en", поэтому делаем RU-контент как язык "en" через contentDir.
+# Это временный хак, чтобы деплой прошёл. Позже переключим префикс на /ru/ на собственном домене.
+
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
+disableKinds = ["taxonomy", "term"]
+
 [sitemap]
-  changefreq = 'weekly'
+  changefreq = "weekly"
   priority = 0.5
-  filename = 'sitemap.xml'
+  filename = "sitemap.xml"
 
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+  home = ["HTML", "RSS", "JSON"]
 
 [languages]
-  [languages.ru]
-    languageName = 'Русский'
+  [languages.en]
+    languageName = "Русский"
+    languageCode = "ru-RU"
+    contentDir = "content/ru"
     weight = 1
-    title = 'OpenAgent'
-    [languages.ru.params]
-      description = 'Практические гайды по AI-агентам, OpenClaw и автоматизации.'
+    title = "OpenAgent"
+    [languages.en.params]
+      description = "Практические гайды по AI-агентам, OpenClaw и автоматизации."
 
   [languages.uz]
     languageName = "Oz'bek"
+    languageCode = "uz-UZ"
+    contentDir = "content/uz"
     weight = 2
-    title = 'OpenAgent'
+    title = "OpenAgent"
     [languages.uz.params]
       description = "AI agentlari, OpenClaw va avtomatlashtirish bo'yicha amaliy qo'llanmalar."
 
 [params]
-  env = 'production'
-  title = 'OpenAgent'
-  description = 'Практика AI-агентов: OpenClaw, кейсы, гайды, автоматизация.'
-  author = 'OpenAgent'
+  env = "production"
+  title = "OpenAgent"
+  description = "Практика AI-агентов: OpenClaw, кейсы, гайды, автоматизация."
+  author = "OpenAgent"
 
-  defaultTheme = 'auto'
+  defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -47,47 +58,45 @@ defaultContentLanguageInSubdir = true
   ShowCodeCopyButtons = true
   ShowWordCount = true
   UseHugoToc = true
-  disableSpecial1stPost = false
 
-  # Картинка для превью (OpenGraph/Twitter). Позже заменим на реальную.
-  images = ['img/og.png']
-  keywords = ['OpenClaw', 'AI агенты', 'автоматизация', 'LLM', 'боты', 'Hugo']
+  images = ["img/og.png"]
+  keywords = ["OpenClaw", "AI агенты", "автоматизация", "LLM", "боты"]
 
   [params.label]
-    text = 'OpenAgent'
+    text = "OpenAgent"
 
   [params.homeInfoParams]
-    Title = 'OpenAgent'
-    Content = 'Реальный опыт использования AI-агентов (OpenClaw): кейсы, гайды, ошибки и решения. RU / UZ.'
+    Title = "OpenAgent"
+    Content = "Реальный опыт использования AI-агентов (OpenClaw): кейсы, гайды, ошибки и решения. RU / UZ."
 
   [[params.socialIcons]]
-    name = 'telegram'
-    url = 'https://t.me/'
+    name = "telegram"
+    url = "https://t.me/"
 
   [params.assets]
-    favicon = '/favicon.ico'
-    favicon16x16 = '/favicon-16x16.png'
-    favicon32x32 = '/favicon-32x32.png'
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
 
 [menu]
-  [[languages.ru.menu.main]]
-    identifier = 'guides'
-    name = 'Гайды'
-    url = '/ru/posts/guides/'
+  [[languages.en.menu.main]]
+    identifier = "guides"
+    name = "Гайды"
+    url = "/en/posts/guides/"
     weight = 10
-  [[languages.ru.menu.main]]
-    identifier = 'news'
-    name = 'Новости AI'
-    url = '/ru/posts/news/'
+  [[languages.en.menu.main]]
+    identifier = "news"
+    name = "Новости AI"
+    url = "/en/posts/news/"
     weight = 20
 
   [[languages.uz.menu.main]]
-    identifier = 'guides'
+    identifier = "guides"
     name = "Qo'llanmalar"
-    url = '/uz/posts/guides/'
+    url = "/uz/posts/guides/"
     weight = 10
   [[languages.uz.menu.main]]
-    identifier = 'news'
-    name = 'Yangiliklar'
-    url = '/uz/posts/news/'
+    identifier = "news"
+    name = "Yangiliklar"
+    url = "/uz/posts/news/"
     weight = 20
