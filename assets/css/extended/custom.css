@@ -1,0 +1,34 @@
+/* OpenAgent minimal dark tweaks for PaperMod */
+:root{
+  --theme: rgb(11, 15, 25);
+  --entry: rgb(16, 23, 42);
+  --primary: rgb(244, 247, 255);
+  --secondary: rgb(170, 182, 200);
+  --tertiary: rgb(120, 140, 160);
+  --content: rgb(235, 241, 255);
+  --hljs-bg: rgb(16, 23, 42);
+  --code-bg: rgb(16, 23, 42);
+  --border: rgba(255,255,255,.08);
+  --radius: 14px;
+}
+
+.main{max-width: 920px;}
+
+.post-content a{ text-decoration-thickness: .12em; text-underline-offset: .18em; }
+
+.post-entry, .first-entry {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.header, .nav {
+  border-bottom: 1px solid var(--border);
+}
+
+.logo a{ letter-spacing: .3px; }
+
+/* nicer code blocks */
+pre {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}

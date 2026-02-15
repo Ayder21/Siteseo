@@ -69,6 +69,9 @@ disableKinds = ["taxonomy", "term"]
     Title = "OpenAgent"
     Content = "Реальный опыт использования AI-агентов (OpenClaw): кейсы, гайды, ошибки и решения. RU / UZ."
 
+  ShowToc = true
+  ShowFullTextinRSS = true
+
   [[params.socialIcons]]
     name = "telegram"
     url = "https://t.me/"
